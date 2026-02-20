@@ -1,0 +1,18 @@
+# Cache files
+__pycache__
+
+# Logs
+logs
+*.log
+
+# dotenv environment variable files
+.env
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
+*.venv
+
+# Database
+*.sqlite
+*.db
