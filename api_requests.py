@@ -81,7 +81,18 @@ class WeatherReport:
         )
 
     def __repr__(self):
-        return f"WeatherReport(city={self.city}, country={self.country}, temp={self.temperature})"
+        return (
+        f"WeatherReport(data={{"
+        f"'city': {self.city}, "
+        f"'country': {self.country}, "
+        f"'latitude': {self.latitude}, "
+        f"'longitude': {self.longitude}, "
+        f"'elevation': {self.elevation}, "
+        f"'temperature': {self.temperature}, "
+        f"'windspeed': {self.windspeed}, "
+        f"'time': {self.time}"
+        f"}})"
+    )
 
 # Asks user for what city they want report for and updates parameters to include it
 city_name = input(str("Enter city name: "))
