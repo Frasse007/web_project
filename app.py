@@ -6,6 +6,7 @@ from routes import weather
 # __name__ helps Flask find template and static files.
 app = Flask(__name__)
 
+# Import routes
 app.register_blueprint(weather)
 
 
