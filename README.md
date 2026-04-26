@@ -41,8 +41,7 @@ A Python application that fetches real-time weather data and stores it in a data
 ### Web Interface
 1. ```bash
    python app.py
-2. 
-3. 
+2. Go to http://localhost:5000
 
 ## Project Structure
 ```
