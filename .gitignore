@@ -16,3 +16,4 @@ logs
 # Database
 *.sqlite
 *.db
+*.sql
