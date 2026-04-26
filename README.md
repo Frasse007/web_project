@@ -38,11 +38,6 @@ A Python application that fetches real-time weather data and stores it in a data
 
 ## Usage
 
-### Command Line
-```bash
-python app.py --name "Chicago" --countryCode "US"
-```
-
 ### Web Interface
 1. ```bash
    python app.py
