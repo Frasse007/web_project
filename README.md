@@ -48,11 +48,12 @@ A Python application that fetches real-time weather data and stores it in a data
 ```
 web-project/
 ├── templates/                # HTML Pages
-├── tests/                    # Test files
-├── docs/                     # Documentation
+├── static/                   # CSS Styling
 ├── open_meteo_client.py      # API Client
 ├── routes.py                 # API Routes
+├── db.py                     # DB Connection
 ├── app.py                    # Source code
+├── requirements.txt          # Dependencies
 └── README.md
 ```               
 
