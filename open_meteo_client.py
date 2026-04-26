@@ -94,12 +94,4 @@ class WeatherReport:
         f"}})"
     )
 
-# Asks user for what city they want report for and updates parameters to include it
-city_name = input(str("Enter city name: "))
-city_params = {"name": city_name, "countryCode": "US", "count": 1}
-result = get_weather(city_params)
-if result:
-    report = WeatherReport(result)
-    print(report)
-
 
