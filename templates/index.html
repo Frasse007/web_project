@@ -4,14 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
 </head>
 <body>
     <header>
         <h1>Welcome to your weather app</h1>
+        <p>Enter a city to fetch live weather and save it to the database.</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
     </header>
     <main>
-        <h2>City name</h2>
-        <p>Placeholder information for now</p>
+        <form action="/create" method="POST">
+            <label for="city">City Name</label>
+            <input type="text" id="city" name="city" placeholder="e.g. Chicago"/>
+            <button type="submit">Fetch &amp; Save</button>
+        </form>
     </main>
     <footer>
         <p>Thanks for visiting!</p>

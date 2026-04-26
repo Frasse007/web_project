@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ obs.city }} - Weather</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
+</head>
+<body>
+    <header>
+        <a href="/">← New search</a>
+        <h1>{{ obs.city }}</h1>
+        <p class="sub">{{ obs.country }} &nbsp;·&nbsp; ID #{{ obs.id }} &nbsp;·&nbsp; Saved {{ obs.created_at }}</p>
+    
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+            <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+    </header>
+    
+    <main>
+        <table>
+            <tr><td>Temperature</td><td>{{ obs.temperature }} °C</td></tr>
+            <tr><td>Wind Speed</td> <td>{{ obs.windspeed }} km/h</td></tr>
+            <tr><td>Elevation</td>  <td>{{ obs.elevation }} m</td></tr>
+            <tr><td>Latitude</td>   <td>{{ obs.latitude }}°N</td></tr>
+            <tr><td>Longitude</td>  <td>{{ obs.longitude }}°E</td></tr>
+        </table>
+
+        <hr>
+        
+        <h2>Update</h2>
+        <form action="/update/{{ obs.id }}" method="POST">
+            <label>Temperature (°C)
+            <input type="number" name="temperature" step="0.1" placeholder="{{ obs.temperature }}" />
+            </label>
+            <label>Wind Speed (km/h)
+            <input type="number" name="windspeed" step="0.1" placeholder="{{ obs.windspeed }}" />
+            </label>
+            <label>Elevation (m)
+            <input type="number" name="elevation" step="0.1" placeholder="{{ obs.elevation }}" />
+            </label>
+            <button type="submit">Save changes</button>
+        </form>
+        
+        <hr>
+        
+        <h2>Delete</h2>
+        <form action="/delete/{{ obs.id }}" method="POST"
+                onsubmit="return confirm('Delete this observation?')">
+            <button type="submit" class="danger">Delete entry</button>
+        </form>
+    </main>
+    <footer>
+        <p>Thanks for visiting!</p>
+    </footer>
+    </body>

@@ -1,0 +1,18 @@
+/* Basic Styling for HTML templates */
+body          { font-family: sans-serif; max-width: 480px; margin: 60px auto; padding: 0 1rem; }
+h1            { margin-bottom: 0.25rem; }
+h2            { margin: 1.5rem 0 0.5rem; font-size: 1.1rem; }
+p             { color: #555; margin-bottom: 1.5rem; }
+a             { color: #00c; font-size: 0.9rem; }
+hr            { border: none; border-top: 1px solid #ddd; margin: 1.75rem 0; }
+label         { display: block; font-size: 0.9rem; font-weight: bold; margin-bottom: 0.4rem; }
+input         { width: 100%; padding: 0.5rem; font-size: 1rem; margin-bottom: 0.75rem; box-sizing: border-box; }
+button        { padding: 0.5rem 1.25rem; font-size: 1rem; cursor: pointer; }
+button.danger { background: #c00; color: #fff; border: none; }
+table         { border-collapse: collapse; width: 100%; margin-bottom: 2rem; }
+td            { padding: 0.4rem 0.6rem; border: 1px solid #ddd; }
+td:first-child{ font-weight: bold; width: 40%; background: #f7f7f7; }
+.sub          { color: #555; margin-bottom: 1.5rem; }
+.flash        { padding: 0.5rem 0.75rem; margin-bottom: 1rem; border-left: 4px solid; }
+.flash.error  { border-color: #c00; background: #fff0f0; color: #c00; }
+.flash.success{ border-color: #080; background: #f0fff0; color: #080; }
