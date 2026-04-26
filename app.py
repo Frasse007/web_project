@@ -1,10 +1,11 @@
-# Import the Flask class
+import os
 from flask import Flask
 from routes import weather
 
 # Create an instance of the Flask class. 
 # __name__ helps Flask find template and static files.
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY", "dev-secret-key")
 
 # Import routes
 app.register_blueprint(weather)
